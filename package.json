@@ -2,7 +2,7 @@
   "name": "rakshitha-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Rakshitha1627.github.io/rakshitha-portfolio",
+  "homepage": "https://rakshitha1627.github.io/rakshitha-portfolio",
 
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
