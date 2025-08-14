@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/rakshitha-portfolio/static/css/main.55a80432.css",
-    "main.js": "/rakshitha-portfolio/static/js/main.ebb2548f.js",
+    "main.js": "/rakshitha-portfolio/static/js/main.4ff53b15.js",
     "index.html": "/rakshitha-portfolio/index.html",
     "main.55a80432.css.map": "/rakshitha-portfolio/static/css/main.55a80432.css.map",
-    "main.ebb2548f.js.map": "/rakshitha-portfolio/static/js/main.ebb2548f.js.map"
+    "main.4ff53b15.js.map": "/rakshitha-portfolio/static/js/main.4ff53b15.js.map"
   },
   "entrypoints": [
     "static/css/main.55a80432.css",
-    "static/js/main.ebb2548f.js"
+    "static/js/main.4ff53b15.js"
   ]
 }
