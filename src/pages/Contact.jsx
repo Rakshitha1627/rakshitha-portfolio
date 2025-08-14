@@ -1,6 +1,7 @@
 import GlowCard from "../components/Glowcard";
 import { basics } from "../data/resume";
 import { useState } from "react";
+import emailjs from "emailjs-com"; // <-- make sure this is installed
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,8 +16,28 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Message sent!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`);
-    setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID", // from EmailJS dashboard
+        "YOUR_TEMPLATE_ID", // from EmailJS dashboard
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        "YOUR_PUBLIC_KEY" // from EmailJS account
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("Failed to send message. Please try again.");
+        }
+      );
   };
 
   return (
