@@ -1,39 +1,27 @@
-import { NavLink } from "react-router-dom";
-
-const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/experience", label: "Experience" },
-  { to: "/projects", label: "Projects" },
-  { to: "/contact", label: "Contact" },
-];
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur bg-mid/60 border-b border-white/10">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+        {/* Logo + Name */}
+        <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition">
           <div className="h-8 w-8 rounded-full bg-glow/20 shadow-glow grid place-items-center">
             <span className="text-glow font-bold">R</span>
           </div>
           <span className="text-lg font-semibold">Rakshitha</span>
-        </div>
+        </Link>
+
+        {/* Navigation Links */}
         <ul className="flex gap-5 text-sm">
-          {links.map((l) => (
-            <li key={l.to}>
-              <NavLink
-                to={l.to}
-                end
-                className={({ isActive }) =>
-                  `px-2 py-1 rounded-lg transition ${
-                    isActive
-                      ? "text-white bg-glow/20 shadow-glow"
-                      : "text-dim hover:text-white hover:bg-white/5"
-                  }`
-                }
+          {["Home", "About", "Experience", "Projects", "Contact"].map((page) => (
+            <li key={page}>
+              <Link
+                to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
+                className="px-2 py-1 rounded-lg text-dim hover:text-white hover:bg-white/5 transition"
               >
-                {l.label}
-              </NavLink>
+                {page}
+              </Link>
             </li>
           ))}
         </ul>
